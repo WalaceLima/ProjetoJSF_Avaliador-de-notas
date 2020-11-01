@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/composite"
+	   xmlns:h="http://java.sun.com/jsf/html"
+	   xmlns:f="http://java.sun.com/jsf/core"
+	   xmlns:p="http://primefaces.org/ui"
+	   >
+ <h:head>
+ </h:head>
+ 
+ 
+ <h:body>
+  <h:form id="form1">
+     <p:panelGrid columns="2">
+         <h:outputText value="Nome" />
+         <p:inputText value="#{mb.aluno.nome}"  required="true" />
+         <h:outputText value="Disciplina" />
+         <p:inputText value="#{mb.aluno.disciplina}"  required="true" />
+          <h:outputText value="Nota1" />
+         <p:inputText value="#{mb.aluno.nota1}"   required="true" />
+         <h:outputText value="Nota2" />
+         <p:inputText value="#{mb.aluno.nota2}"   required="true" />
+         
+         <p:commandButton   value="calcular"  
+               action="#{mb.calcular}"
+            update=":form1" ajax="true"></p:commandButton>
+            
+            
+         <p:commandButton  value="Limpar os campos"    action="#{mb.limpar}"
+            update=":form1" ajax="true"></p:commandButton>
+         <h:outputText value="Media" />
+         <p:inputText value="#{mb.aluno.media}" id="media" readonly="true"  />
+         <h:outputText value="Situacao" />
+         <p:inputText value="#{mb.aluno.situacao}" id="situacao" readonly="true" />
+     </p:panelGrid> 
+    <p:messages></p:messages>
+    <p:growl></p:growl>
+  </h:form> 
+ </h:body>
+ 
+ 
+ </html>
